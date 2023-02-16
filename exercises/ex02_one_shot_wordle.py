@@ -1,4 +1,4 @@
-"""EX02 - One Shot Wordle - A cute step towards Wordle."""
+"""EX02 - One Shot Wordle - A Wordle that allows only one try."""
 
 __author__ = "730398384"
 
