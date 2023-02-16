@@ -15,13 +15,13 @@ i: int = 0
 
 while i < len(secret):
     if len(secret) != len(normalized_guess):
-        guess = input(f"That was not {len(secret)} letters! Try again! ") # ensuring guess is as long as secret
+        guess = input(f"That was not {len(secret)} letters! Try again! ")  # ensuring guess is as long as secret
         normalized_guess = guess.lower()
     elif secret[i] == normalized_guess[i]:
         letter_box = letter_box + GREEN_BOX
     elif secret[i] != normalized_guess[i]:
         j = 0
-        letter_match = "False" # if index of guess doesn't match up to secret then it goes into the loop
+        letter_match = "False"  # if index of guess doesn't match up to secret then it goes into the loop
         while j < len(secret):
             if secret[j] == normalized_guess[i]:
                 letter_match = "True"
