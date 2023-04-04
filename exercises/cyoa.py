@@ -48,8 +48,8 @@ def main() -> None:
     player_choice: int = 0
     # Ends game if no life points left
     if life_points <= 0:
-      print("Sorry! You died.")
-      play_game = False
+        print("Sorry! You died.")
+        play_game is False
     # Sets up a "Status Screen," giving players their current status"
     while play_game is True and life_points > 0:
         print(f"=I=====[Round {round_number}]=====I=")
@@ -66,20 +66,20 @@ def main() -> None:
         elif player_choice == 2:
             upgrade()
         elif player_choice == 3:
-            play_game == False
+            play_game is False
         round_number += 1                
     # Gives an end player screen
     if play_game is False:
-        print (f"Final Round: {round_number}")
-        print (f"Final Attack Points: {attack_points} {FIST}")
-        print (f"Final Defense Points: {defense_points} {SHIELD}")       
-        print (f"Final Life Points: {life_points} {HEART}")
-        print (f"Final Victory Points: {points} {MONEY}")
-        print (f"Thanks for playing, {player}! Hope you had fun!") 
+        print(f"Final Round: {round_number}")
+        print(f"Final Attack Points: {attack_points} {FIST}")
+        print(f"Final Defense Points: {defense_points} {SHIELD}")       
+        print(f"Final Life Points: {life_points} {HEART}")
+        print(f"Final Victory Points: {points} {MONEY}")
+        print(f"Thanks for playing, {player}! Hope you had fun!") 
 
 
 def fight() -> None:
-    """The fight function, first of the three options"""
+    """The fight function, first of the three options."""
     global player
     global life_points
     global attack_points
@@ -96,7 +96,7 @@ def fight() -> None:
         fight_choice = int(input("Please input the number corresponding to the choice you would like to do: 1: Attack or 2: Defend! "))
     if enemy_health <= 0:
         print(f"The {player} wins this round! They live to fight another day! They have gained some victory points!")
-        points += (round_number + randint(1,10))
+        points += (round_number + randint(1, 10))
     if fight_choice == 1:
         attack()
     if fight_choice == 2:
@@ -124,7 +124,7 @@ def attack() -> None:
         enemy_damage = enemy_attack - (defense_points - 3)
         life_points = life_points - enemy_damage
         print(f"The enemy inflicted {enemy_damage} damage to you! {FIST}") 
-    elif enemy_attack <= (defense_points-3):
+    elif enemy_attack <= (defense_points - 3):
         remaining_defense = defense_points - enemy_attack
         defense_points = remaining_defense
         print(f"The enemy struck a mighty blow! You have {defense_points} defense left! {SHIELD}")  
@@ -139,11 +139,11 @@ def defend() -> None:
     enemy_attack = defense_points + 1
     enemy_defense = randint(1, attack_points - 1)
     attack_damage: int = randint(1, attack_points)
-    if (attack_damage-3) > enemy_defense:
+    if (attack_damage - 3) > enemy_defense:
         damage = attack_damage - enemy_defense
         enemy_health = enemy_health - damage
         print(f"You inflicted {damage} damage to the enemy! {FIST}") 
-    elif (attack_damage-3) <= enemy_defense:
+    elif (attack_damage - 3) <= enemy_defense:
         remaining_enemy_defense = enemy_defense - attack_damage
         enemy_defense = remaining_enemy_defense
         print(f"You have struck a mighty blow! The enemy has {enemy_defense} defense left! {SHIELD}")
